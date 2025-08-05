@@ -1,4 +1,4 @@
-# <Name>
+# GitTorrent
 
 # <Title>
 

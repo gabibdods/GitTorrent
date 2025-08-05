@@ -16,4 +16,7 @@
 
 # particular repository ignores:
 
-!PTRS.txt
+!GitTorrent.iml
+
+!src/
+!src/Main.java
