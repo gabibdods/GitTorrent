@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format>
+    <eol>lf</eol>
+    <trimTrailing>true</trimTrailing>
+    <ensureFinalNewline>true</ensureFinalNewline>
+    <collapseBlankLinesTo>2</collapseBlankLinesTo>
+    <detab>true</detab>
+    <tabWidth>2</tabWidth>
+    <wrapMarkdownAt>100</wrapMarkdownAt>
+    <language name="Java">
+        <eol>lf</eol>
+        <tabWidth>4</tabWidth>
+    </language>
+    <language name="Markdown">
+        <wrapMarkdownAt>88</wrapMarkdownAt>
+    </language>
+</format>

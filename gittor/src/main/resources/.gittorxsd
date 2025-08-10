@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="gittor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="version" type="xs:string"/>
+                <xs:element name="defaults" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="branch" type="xs:string" minOccurs="0"/>
+                            <xs:element name="depth" type="xs:int" minOccurs="0"/>
+                            <xs:element name="protocol" type="xs:string" minOccurs="0"/>
+                            <xs:element name="baseDir" type="xs:string" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="repositories">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="repo" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="url" type="xs:string"/>
+                                        <xs:element name="branch" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="depth" type="xs:int" minOccurs="0"/>
+                                        <xs:element name="depends_on" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="name" type="xs:string" maxOccurs="unbounded"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="name" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

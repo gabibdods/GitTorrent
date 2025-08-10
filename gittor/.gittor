@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gittor>
+    <version>1</version>
+    <defaults>
+        <branch>main</branch>
+        <depth>0</depth>
+        <protocol>https</protocol>
+        <baseDir>workspace</baseDir>
+    </defaults>
+    <repositories>
+        <repo name="core-lib">
+            <url>https://example.org/scm/core-lib.git</url>
+            <branch>main</branch>
+            <depth>0</depth>
+            <post><scan-secrets>true</scan-secrets></post>
+        </repo>
+        <repo name="auth-service">
+            <url>git@example.org:auth/auth-service.git</url>
+            <branch>main</branch>
+            <depth>1</depth>
+            <depends_on><name>core-lib</name></depends_on>
+        </repo>
+        <repo name="web-app">
+            <url>https://example.org/scm/web-app.git</url>
+            <branch>main</branch>
+            <depth>0</depth>
+            <depends_on><name>auth-service</name><name>core-lib</name></depends_on>
+            <post>
+                <rewrite-history>
+                    <delete-files>*.pem</delete-files>
+                    <delete-files>*.key</delete-files>
+                    <delete-paths>secrets/</delete-paths>
+                    <strip-blobs-over>50MB</strip-blobs-over>
+                    <replace-text find="(?i)AWS_SECRET_ACCESS_KEY\s*=\s*([A-Za-z0-9/+=]{40})" replace="AWS_SECRET_ACCESS_KEY=***REDACTED***"/>
+                    <force-push>false</force-push>
+                </rewrite-history>
+            </post>
+        </repo>
+    </repositories>
+</gittor>

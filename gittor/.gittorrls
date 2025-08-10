@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+    <entropy threshold="3.8"/>
+    <extensions>
+        <ext>env</ext><ext>properties</ext><ext>json</ext><ext>yaml</ext><ext>yml</ext>
+        <ext>xml</ext><ext>ini</ext><ext>cfg</ext><ext>toml</ext><ext>conf</ext>
+        <ext>java</ext><ext>kt</ext><ext>scala</ext><ext>groovy</ext>
+        <ext>js</ext><ext>ts</ext><ext>tsx</ext><ext>jsx</ext><ext>c</ext><ext>cc</ext><ext>cpp</ext><ext>h</ext><ext>hpp</ext>
+        <ext>py</ext><ext>rb</ext><ext>go</ext><ext>rs</ext><ext>php</ext><ext>swift</ext><ext>m</ext><ext>mm</ext>
+        <ext>sh</ext><ext>bash</ext><ext>ps1</ext><ext>cmd</ext><ext>bat</ext>
+        <ext>md</ext><ext>txt</ext><ext>rst</ext>
+        <ext>.gitignore</ext><ext>.gitattributes</ext><ext>.npmrc</ext><ext>.pypirc</ext>
+    </extensions>
+    <deny>
+        <path>.git/</path><path>.gittor/</path><path>.idea/</path><path>.vscode/</path>
+        <path>node_modules/</path><path>build/</path><path>dist/</path><path>out/</path>
+        <path>target/</path><path>bin/</path><path>obj/</path><path>venv/</path>
+        <path>__pycache__/</path><path>.tox/</path><path>.eggs/</path><path>coverage/</path>
+        <path>.gradle/</path><path>.mvn/</path>
+    </deny>
+    <allow>
+        <pattern>THIS_IS_DUMMY_DATA</pattern>
+        <pattern>DO_NOT_USE_IN_PRODUCTION</pattern>
+        <pattern>SAMPLE_ONLY</pattern>
+        <pattern>EXAMPLE_SECRET</pattern>
+    </allow>
+    <rule name="AWS Access Key ID">\b(AKIA|ASIA|AGPA|AIDA|AROA|AIPA)[0-9A-Z]{16}\b</rule>
+    <rule name="AWS Secret Access Key">(?i)\baws[_-]?secret[_-]?access[_-]?key\b\s*[:=]\s*([A-Za-z0-9/+=]{40})</rule>
+    <rule name="AWS Session Token (partial)">(?i)\baws[_-]?session[_-]?token\b\s*[:=]\s*([A-Za-z0-9/+=]{32,})</rule>
+    <rule name="GCP Service Account JSON">"type"\s*:\s*"service_account"</rule>
+    <rule name="GCP API Key">\bAIza[0-9A-Za-z\-_]{35}\b</rule>
+    <rule name="Firebase Database URL">https?://[A-Za-z0-9\-]+\.firebaseio\.com</rule>
+    <rule name="Azure Storage Account Key">(?i)\b(AccountKey)\s*=\s*([A-Za-z0-9+/=]{32,})</rule>
+    <rule name="Azure Service Bus Conn String">(?i)\bEndpoint=sb://[^;]+;SharedAccessKeyName=[^;]+;SharedAccessKey=[A-Za-z0-9+/=]{16,}\b</rule>
+    <rule name="Azure AD Client Secret">(?i)\b(client_secret)\s*[:=]\s*([A-Za-z0-9._~+-/%]{16,})</rule>
+    <rule name="GitHub Personal Access Token">\bghp_[A-Za-z0-9]{36}\b</rule>
+    <rule name="GitHub Fine-Grained Token">\bgithub_pat_[0-9A-Za-z_]{22,}\b</rule>
+    <rule name="GitLab Personal Access Token">\b(glpat-[A-Za-z0-9\-\_]{20,})\b</rule>
+    <rule name="Bitbucket App Password">(?i)\b(bitbucket|bb)_app[_-]?password\b\s*[:=]\s*([A-Za-z0-9]{20,})</rule>
+    <rule name="Slack Token">\bxox[baprs]-[A-Za-z0-9-]{10,48}\b</rule>
+    <rule name="Stripe Secret Key">\bsk_(live|test)_[0-9a-zA-Z]{24}\b</rule>
+    <rule name="Twilio API Key">\bSK[0-9a-fA-F]{32}\b</rule>
+    <rule name="SendGrid API Key">\bSG\.[A-Za-z0-9_\-]{20,}\.[A-Za-z0-9_\-]{30,}\b</rule>
+    <rule name="Mailgun Private Key">(?i)\bmailgun[_-]?api[_-]?key\b\s*[:=]\s*([A-Za-z0-9-]{20,})</rule>
+    <rule name="PagerDuty API Token">(?i)\b(pagerduty|pd)[_-]?api[_-]?token\b\s*[:=]\s*([A-Za-z0-9]{20,})</rule>
+    <rule name="OAuth Client ID">(?i)\b(client[_-]?id)\b\s*[:=]\s*([A-Za-z0-9._~+-/]{12,})</rule>
+    <rule name="OAuth Client Secret">(?i)\b(client[_-]?secret)\b\s*[:=]\s*([A-Za-z0-9._~+-/%]{16,})</rule>
+    <rule name="JWT Token">\b[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+\b</rule>
+    <rule name="Generic Password Assign">(?i)\b(pass|password|pwd|secret)\b\s*[:=]\s*(['"]?)([^\s'"]{8,})\1</rule>
+    <rule name="Postgres URI">\bpostgres(ql)?://[^:\s]+:[^@\s]{8,}@[^/\s:]+(:\d+)?/[A-Za-z0-9_\-]+</rule>
+    <rule name="MySQL URI">\bmysql://[^:\s]+:[^@\s]{8,}@[^/\s:]+(:\d+)?/[A-Za-z0-9_\-]+</rule>
+    <rule name="Mongo URI">\bmongodb(\+srv)?:\/\/[^:\s]+:[^@\s]{8,}@[^/\s:]+(:\d+)?/[A-Za-z0-9_\-]+</rule>
+    <rule name="Redis URI">\bredis(\+ssl)?:\/\/[^:\s]+:[^@\s]{8,}@[^/\s:]+(:\d+)?\b</rule>
+    <rule name="URL Basic Auth">\bhttps?:\/\/[^:\s]+:[^@\s]{8,}@[^/\s:]+</rule>
+    <rule name="PEM Private Key Header">-----BEGIN (?:RSA|DSA|EC|OPENSSH|PGP) PRIVATE KEY-----</rule>
+    <rule name="OpenSSH Private Key">^-----BEGIN OPENSSH PRIVATE KEY-----$</rule>
+    <rule name="PKCS#8 Private Key">^-----BEGIN PRIVATE KEY-----$</rule>
+    <rule name="RSA Private Key">^-----BEGIN RSA PRIVATE KEY-----$</rule>
+    <rule name="DSA Private Key">^-----BEGIN DSA PRIVATE KEY-----$</rule>
+    <rule name="EC Private Key">^-----BEGIN EC PRIVATE KEY-----$</rule>
+    <rule name="PGP Private Key">^-----BEGIN PGP PRIVATE KEY BLOCK-----$</rule>
+    <rule name="SSH Private Key File">(?m)^([-]{5}BEGIN [A-Z ]+PRIVATE KEY[-]{5})$</rule>
+    <rule name="Square Access Token">(?i)\bsq0atp-[0-9A-Za-z\-_]{22,}\b</rule>
+    <rule name="Heroku API Key">(?i)\bheroku[_-]?api[_-]?key\b\s*[:=]\s*([A-Za-z0-9]{20,})</rule>
+    <rule name="Mapbox Access Token">\bpk\.[A-Za-z0-9\-_]{60,}\b</rule>
+    <rule name="Algolia Admin Key">(?i)\balgolia[_-]?admin[_-]?api[_-]?key\b\s*[:=]\s*([A-Za-z0-9]{16,})</rule>
+    <rule name="Custom API Key">(?i)\bapi[_-]?key\b\s*[:=]\s*([A-Za-z0-9_-]{16,})</rule>
+</rules>

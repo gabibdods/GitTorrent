@@ -16,10 +16,56 @@
 
 # particular repository ignores:
 
-!GitTorrent.iml
+!gittor/
+!gittor/.gittor
+!gittor/.gittorfmt
+!gittor/.gittorlng
+!gittor/.gittorrls
+!gittor/build.gradle
+!gittor/build.gradle.kts
+!gittor/gittor.iml
+!gittor/gittor.ps1
+!gittor/settings.gradle
+!gittor/settings.gradle.kts
 
-!src/
-!src/Main.java
+!gittor/gradle/
+
+!gittor/gradle/wrapper/
+!gittor/gradle/wrapper/gradle-wrapper.jar
+!gittor/gradle/wrapper/gradle-wrapper.properties
+
+!gittor/lib/
+!gittor/lib/*.jar
+
+!gittor/src/
+
+!gittor/src/main/
+
+!gittor/src/main/java/
+
+!gittor/src/main/java/dev/
+!gittor/src/main/java/dev/Main.java
+
+!gittor/src/main/java/dev/analysis/
+!gittor/src/main/java/dev/analysis/*.java
+
+!gittor/src/main/java/dev/cli/
+!gittor/src/main/java/dev/cli/*.java
+
+!gittor/src/main/java/dev/core/
+!gittor/src/main/java/dev/core/*.java
+
+!gittor/src/main/java/dev/format/
+!gittor/src/main/java/dev/format/*.java
+
+!gittor/src/main/java/dev/model/
+!gittor/src/main/java/dev/model/*.java
+
+!gittor/src/main/java/dev/util/
+!gittor/src/main/java/dev/util/*.java
+
+!gittor/src/main/resources/
+!gittor/src/main/resources/.gittorxsd
 
 !gui/
 !gui/.editorconfig

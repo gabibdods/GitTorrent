@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<languages>
+    <map ext="java" lang="Java"/>
+    <map ext="kt" lang="Kotlin"/>
+    <map ext="scala" lang="Scala"/>
+    <map ext="js" lang="JavaScript"/>
+    <map ext="ts" lang="TypeScript"/>
+    <map ext="tsx" lang="TypeScript"/>
+    <map ext="jsx" lang="JavaScript"/>
+    <map ext="py" lang="Python"/>
+    <map ext="rb" lang="Ruby"/>
+    <map ext="go" lang="Go"/>
+    <map ext="rs" lang="Rust"/>
+    <map ext="c" lang="C"/>
+    <map ext="cc" lang="C++"/>
+    <map ext="cpp" lang="C++"/>
+    <map ext="h" lang="C/C++ Header"/>
+    <map ext="hpp" lang="C++ Header"/>
+    <map ext="php" lang="PHP"/>
+    <map ext="swift" lang="Swift"/>
+    <map ext="m" lang="Objective-C"/>
+    <map ext="mm" lang="Objective-C++"/>
+    <map ext="cs" lang="C#"/>
+    <map ext="sh" lang="Shell"/>
+    <map ext="bash" lang="Shell"/>
+    <map ext="ps1" lang="PowerShell"/>
+    <map ext="yaml" lang="YAML"/>
+    <map ext="yml" lang="YAML"/>
+    <map ext="json" lang="JSON"/>
+    <map ext="xml" lang="XML"/>
+    <map ext="md" lang="Markdown"/>
+    <map ext="txt" lang="Text"/>
+    <map ext="ini" lang="INI"/>
+    <map ext="toml" lang="TOML"/>
+    <map ext="gradle" lang="Gradle"/>
+    <map ext="groovy" lang="Groovy"/>
+    <map ext="dart" lang="Dart"/>
+    <map ext="vue" lang="Vue"/>
+    <map ext="svelte" lang="Svelte"/>
+    <map ext="scss" lang="SCSS"/>
+    <map ext="css" lang="CSS"/>
+    <map ext="html" lang="HTML"/>
+    <map ext="bzl" lang="Starlark"/>
+    <map ext="gql" lang="GraphQL"/>
+    <shebang pattern="^#!.*\bpython(\d+)?\b.*" lang="Python"/>
+    <shebang pattern="^#!.*\bnode\b.*" lang="JavaScript"/>
+    <shebang pattern="^#!.*\b(sh|bash|zsh)\b.*" lang="Shell"/>
+    <shebang pattern="^#!.*\bpowershell\b.*" lang="PowerShell"/>
+    <shebang pattern="^#!.*\bperl\b.*" lang="Perl"/>
+    <shebang pattern="^#!.*\bruby\b.*" lang="Ruby"/>
+</languages>
